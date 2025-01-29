@@ -1,0 +1,484 @@
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f5e2e1;
+      color: #333;
+      font-family: 'Press Start 2P', cursive;
+    }
+
+    header {
+  top: 0; /* Ensures it stays at the top */
+  z-index: 1000; /* Ensures it stays on top of other content */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fffafb;
+  position: relative; /* This will be the reference point for the absolute positioning of the shine GIF */
+}
+
+/* Position the shine GIF in the center of the header */
+header .shine-gif {
+  position: absolute;
+  top: 50%; /* Position it in the middle vertically */
+  left: 50%; /* Position it in the middle horizontally */
+  transform: translate(-50%, -50%); /* Adjust the position to truly center it */
+  width: 100px; /* Size of the GIF */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 2000; /* Ensures it stays on top of the header content */
+}
+
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #f3758f;
+    }
+
+    header nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    header nav a {
+      text-decoration: none;
+      color: #fff;
+      width: 40px; /* Ensure the button has a defined size */
+      height: 40px; 
+      display: block;
+      background-size: cover; /* Make background image fill the button */
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+
+    /* Background images for each section */
+    header nav a#about-logo {
+      background-image: url('https://i.imgur.com/dtUb6sZ.jpeg');
+    }
+
+    header nav a#contact-logo {
+      background-image: url('https://i.imgur.com/jnDzcTx.png');
+    }
+
+    header nav a#projects-logo {
+      background-image: url('https://i.imgur.com/SWaBEOW.jpeg');
+    }
+
+    header nav a:hover {
+      transform: scale(1.1); /* Slight zoom effect on hover */
+    }
+
+    .hero {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      padding: 3rem 1rem;
+      background: url('https://i.imgur.com/0QsfmBE.jpeg') no-repeat center center;
+      background-size: cover;
+      gap: 2rem;
+  position: relative; /* This allows the absolute positioning of the cat heart GIF */
+    }
+    .hero .cat-heart {
+  position: absolute;
+  bottom: 10px; /* Distance from the bottom */
+  right: 10px; /* Distance from the right */
+  width: 100px; /* Size of the GIF */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 100; /* Ensure it stays on top of other content */
+}
+
+    .hero img {
+      width: 250px;
+      height: 300px;
+      border-radius: 50%;
+      border: 5px solid transparent;
+      padding: 10px;
+      position: relative;
+      background-color: rgb(255, 214, 234);
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      max-width: 50%;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+      color: #d44782;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #666;
+      margin-bottom: 2rem;
+      line-height: 1.4;
+    }
+
+    .hero-content .buttons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .hero-content .buttons a {
+  text-decoration: none;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  background-color: #ff91a3;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-family: 'Press Start 2P', cursive;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.hero-content .buttons a:hover {
+  background-color: #fbc4d3;
+  transform: scale(1.05);
+}
+
+/* Adding the heart background image */
+.hero-content .buttons a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.imgur.com/Tz62pK2.png'); /* Replace with the URL of your heart image */
+  background-repeat: repeat; /* Ensures the heart pattern repeats */
+  background-size: 20px 20px; /* Adjust the size of the heart */
+  animation: heartAnimation 2s infinite linear; /* Animation effect */
+  z-index: -1; /* Ensures the heart is behind the button text */
+}
+
+/* Heart animation (for movement effect) */
+@keyframes heartAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 10px 10px; /* You can adjust the movement here */
+  }
+}
+
+    .about-me {
+  padding: 20px; /* Increase top padding to move the content down */
+  background-color: #fbd3da;
+  height: auto; /* Optional: Adjust height to fit content dynamically */
+  border: 6px dotted #f3758f;
+  position: relative; /* Make the about-me section a positioning container */
+  text-align: center;
+}
+.about-me .decoration {
+  position: absolute;
+  bottom: 0; /* Place the images at the bottom */
+  width: 100px; /* Adjust the size of the image */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 10; /* Ensure it stays above the background but below text */
+}
+
+.about-me .decoration.left {
+  left: 10px; /* Place it on the left side */
+  transform: scaleX(-1); /* Flip the image horizontally to face left */
+}
+
+.about-me .decoration.right {
+  right: 10px; /* Place it on the right side */
+}
+
+.about-me .cinnamoroll-gif {
+  display: block; /* Makes the image a block element, so it can be centered */
+  margin: 0 auto; /* Centers the image horizontally */
+  width: 200px; /* Adjust the size of the GIF */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 100; /* Ensure the GIF stays above other content */
+}
+
+
+    
+
+.about-me h2 {
+  display: flex; /* Flexbox for horizontal alignment */
+  align-items: center; /* Vertically center align the text and GIF */
+  justify-content: center; /* Horizontally center align items in the container */
+  text-align: center; /* Center align the text */
+  margin-top: 10px; /* Add space above the heading */
+  margin-bottom: 2rem; /* Space below the heading */
+  text-decoration: underline;
+  text-decoration-color: #f3758f; /* Color of the underline */
+  text-decoration-thickness: 3px; /* Thickness of the underline */
+  text-decoration-style: wavy; /* Make it solid for a clean look */
+  text-underline-offset: 4px; /* Offset to move the underline below the text */
+}
+
+
+    .about-me p {
+      font-size: 1.2rem;
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 2rem; 
+    }
+
+    .contact {
+  position: relative; /* Make the contact section a positioning container */
+  padding: 2rem;
+  background-color: #fbd3da;
+  text-align: center;
+}
+
+.contact .bottom-right-gif,
+.contact .bottom-left-gif {
+  position: absolute;
+  bottom: 10px; /* Adjust how far from the bottom */
+  width: 100px; /* Adjust the size of the GIF */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 100; /* Ensure it stays above other content */
+}
+
+.contact .bottom-right-gif {
+  right: 10px; /* Position on the right side */
+}
+
+.contact .bottom-left-gif {
+  left: 10px; /* Position on the left side */
+}
+    .contact h2 {
+      margin-bottom: 1rem;
+    }
+
+    .contact .contact-button {
+      background-color: #f9a7c0;
+      padding: 1rem 2rem;
+      color: #fff;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact .contact-button:hover {
+      background-color: #f8c4d1;
+    }
+
+    .projects {
+      position: relative;
+      padding: 2rem;
+      padding-top: 20px;
+      
+    }
+    .projects .bottom-center-gif {
+  position: absolute;
+  bottom: 10px; /* Position the GIF 10px from the bottom */
+  left: 50%; /* Position it in the center horizontally */
+  transform: translateX(-50%); /* Adjust the position to truly center it */
+  width: 200px; /* Set the size of the GIF */
+  height: auto; /* Maintain aspect ratio */
+  z-index: 100; /* Ensure it stays above other content */
+}
+
+    .projects h2 {
+      text-align: left;
+      margin-bottom: 2rem;
+      margin-right: 30px;
+      display: flex; /* Use flex to align items in a row */
+      align-items: center; /* Vertically align the heading and heart image */
+    }
+    .heart-img {
+  width: 50px; /* Adjust the size of the heart image */
+  height: 50px;
+  margin-right: 10px; /* Add some space between the text and heart */
+}
+
+    .projects .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .projects .project {
+      background-color: #ffa7be;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: left;
+  position: relative; /* Ensure the ribbon is positioned relative to each project */
+  cursor: pointer;
+  height: 380px;
+  margin-bottom: 50px;
+  border: 6px double #d44782;
+
+    }
+    .projects .project::before {
+      content: '';
+  position: absolute;
+  top: -20px; /* Adjust position above the project */
+  left: 0; /* Position the ribbon to the top left of the project */
+  width: 50px; /* Adjust the width based on your image size */
+  height: 50px; /* Adjust the height to fit the ribbon image */
+  background-image: url('https://i.imgur.com/Dg2ooHC.png'); /* Path to your custom image */
+  background-size: cover; /* Ensure the image covers the width */
+  background-repeat: no-repeat;
+}
+.projects .project::after {
+  content: '';
+  position: absolute;
+  top: -20px; /* Adjust position above the project */
+  right: 0; /* Position the ribbon to the top right of the project */
+  width: 50px; /* Adjust the width based on your image size */
+  height: 50px; /* Adjust the height to fit the ribbon image */
+  background-image: url('https://i.imgur.com/Dg2ooHC.png'); /* Path to your custom image */
+  background-size: cover; /* Ensure the image covers the width */
+  background-repeat: no-repeat;
+}
+ 
+    .projects p {
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .projects .project img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .projects .project .project-images img {
+      display: none; /* Hide all images by default */
+    }
+
+    .projects .project .project-images img:first-child {
+      display: block; /* Show only the first image */
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+    }
+
+    .modal .close, .modal .next, .modal .prev {
+      position: absolute;
+      top: 50%;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transform: translateY(-50%);
+    }
+
+    .modal .close {
+      top: 10%;
+      right: 5%;
+      transform: translateY(0);
+    }
+
+    .modal .next {
+      right: 5%;
+    }
+
+    .modal .prev {
+      left: 5%;
+    }
+
+    .about-buttons {
+  text-align: center;      /* Center-aligns the text and content */
+  margin-top: 2rem;
+  font-family: 'Press Start 2P', cursive;
+}footer {
+  background-color: #f1a0b3;  /* Slightly darker pink for contrast */
+  padding: 2rem;
+  text-align: center;
+  color: #d44782;
+  font-family: 'Press Start 2P', cursive;
+  border-top: 4px solid #f3758f; /* A small decorative border */
+}
+
+footer p {
+  margin: 1rem 0;
+  font-size: 1.1rem;
+}
+
+footer a {
+  color: #d44782;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+.about-buttons h2 {
+  display: flex; /* Makes the heading and GIFs align horizontally */
+  align-items: center; /* Vertically centers the items */
+  justify-content: center; /* Horizontally centers the group */
+  gap: 1rem; /* Space between the heading and the GIFs */
+  margin-bottom: 1.5rem;
+}
+
+.about-buttons div {
+  display: flex;           /* Makes the buttons align horizontally */
+  justify-content: center; /* Centers the buttons horizontally */
+  gap: 2rem;               /* Adds space between the buttons */
+}
+
+.about-buttons button {
+  background-color: #f9a7c0;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  font-family: 'Press Start 2P', cursive;
+  overflow: hidden;
+}
+
+.about-buttons button:hover {
+  background-color: #fbc4d3;
+  transform: scale(1.05);
+}
+
+/* Adding the heart background image */
+.about-buttons button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://i.imgur.com/Tz62pK2.png'); /* Replace with the URL of your heart image */
+  background-repeat: repeat; /* Ensures the heart pattern repeats */
+  background-size: 20px 20px; /* Adjusts the size of the heart */
+  animation: heartAnimation 2s infinite linear; /* Animation effect */
+  z-index: -1; /* Ensures the heart is behind the button text */
+}
+
+/* Heart animation (for movement effect) */
+@keyframes heartAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 10px 10px; /* You can adjust the movement here */
+  }
+}
